@@ -11,7 +11,7 @@ namespace ScrabbleScore.Tests
     [TestMethod]
     public void ScoreStaticFields_StaticFieldPopulateCorrectValues_Array()
     {
-      //arrange
+      //arrange s1d2b3f4kjq
       char[] onePointTest = "aeioulnrst".ToCharArray();
       char[] twoPointTest = "dg".ToCharArray();
       char[] threePointTest = "bcmp".ToCharArray();
@@ -40,51 +40,50 @@ namespace ScrabbleScore.Tests
     [TestMethod]
     public void GetScore_OnePointArrayOnePointTest_Int()
     {
-      char[] onePointTest = {'a', 'e', 'i', 'o', 'u', 'l', 'n', 'r', 's', 't'};
       string input = "slot";
       Assert.AreEqual(4, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_TwoPointArrayTwoPointTest_Int()
     {
-      char[] twoPointTest = "dg".ToCharArray();
       string input = "dg";
       Assert.AreEqual(4, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_ThreePointArrayThreePointTest_Int()
     {
-      char[] threePointTest = "bcmp".ToCharArray();
       string input = "bc";
       Assert.AreEqual(6, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_FourPointArrayFourPointTest_Int()
     {
-      char[] fourPointTest = {'f', 'h', 'v', 'w', 'y'};
       string input = "fwy";
       Assert.AreEqual(12, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_FivePointArrayFivePointTest_Int()
     {
-      char[] fivePointTest = {'k'};
       string input = "kk";
       Assert.AreEqual(10, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_EightPointArrayEightPointTest_Int()
     {
-      char[] eightPointTest = {'j', 'x'};
       string input = "jx";
       Assert.AreEqual(16, Score.GetScore(input));
     }
     [TestMethod]
     public void GetScore_TenPointArrayTenPointTest_Int()
     {
-      char[] tenPointTest = {'q', 'z'};
       string input = "qz";
       Assert.AreEqual(20, Score.GetScore(input));
+    }
+    [TestMethod]
+    public void GetScore_TakeInputOfLettersFromAllNumberPointArrayAndReturnScore_Int()
+    {
+      string input = "sdbfkjq";
+      Assert.AreEqual(33, Score.GetScore(input));
     }
   }
 }
