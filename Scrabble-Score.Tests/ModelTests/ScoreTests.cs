@@ -85,5 +85,17 @@ namespace ScrabbleScore.Tests
       string input = "sdbfkjq";
       Assert.AreEqual(33, Score.GetScore(input));
     }
+    [TestMethod]
+    public void GetScore_TakeInputOfSymbolAndReturnScore_Int()
+    {
+      string input = "?!";
+      Assert.AreEqual(0, Score.GetScore(input));
+    }
+    [TestMethod]
+    public void GetScore_TakeEmptyStringAndReturnScore_Int()
+    {
+      string input = "";
+      Assert.AreEqual(0, Score.GetScore(input));
+    }
   }
 }
